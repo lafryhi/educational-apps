@@ -13,34 +13,73 @@
 </head>
 <body>
   <div class="site-shell">
-    <header class="hero">
+    <header class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <span class="eyebrow">منصة تعليمية حديثة</span>
-        <h1>educational-apps</h1>
-        <p>
-          منصة خفيفة وسريعة تجمع التطبيقات التعليمية التفاعلية، مع تصميم Mobile First مناسب للهاتف
-          والحاسوب والمسلاط.
+        <span class="eyebrow">متجر تطبيقات تربوي</span>
+        <h1 id="hero-title">educational-apps</h1>
+        <p class="hero-text">
+          منصة تعليمية خفيفة تجمع التطبيقات التفاعلية للتلاميذ والأساتذة، مع تجربة واضحة وسريعة على
+          الهاتف والحاسوب والمسلاط.
         </p>
+
+        <div class="hero-actions">
+          <a class="primary-button hero-button" href="./apps/verbes/">تشغيل أول تطبيق</a>
+          <span class="device-note">تعمل بسلاسة على الهاتف والحاسوب</span>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-pill">Mobile First</span>
+          <span class="hero-pill">Static & Fast</span>
+          <span class="hero-pill">Offline Ready</span>
+        </div>
       </div>
+
       <div class="hero-panel">
         <p class="hero-label">النطاق المستهدف</p>
         <strong>apps.lafryhi-elmostafa-school-primary.com</strong>
-        <span>بنية قابلة للتوسع والنشر لاحقًا عبر Vercel</span>
+        <span>منصة جاهزة للتوسع التدريجي والنشر السريع عبر Vercel.</span>
+
+        <div class="hero-highlight">
+          <div>
+            <span class="hero-highlight-label">الحالة</span>
+            <strong>تطبيقات تعليمية مستقلة</strong>
+          </div>
+          <p>يعمل بدون إنترنت بعد أول زيارة بفضل Service Worker خفيف.</p>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="apps-section" aria-labelledby="apps-title">
+    <main class="main-content">
+      <section class="catalog" aria-labelledby="catalog-title">
         <div class="section-head">
           <div>
-            <span class="section-kicker">التطبيقات المتاحة</span>
-            <h2 id="apps-title">بداية المنصة</h2>
+            <span class="section-kicker">التطبيقات التعليمية</span>
+            <h2 id="catalog-title">اكتشف التطبيقات المتاحة</h2>
           </div>
-          <p>كل تطبيق مستقل داخل مجلده، مع فصل واضح بين HTML و CSS و JavaScript.</p>
-          <p class="offline-note">يعمل بدون إنترنت بعد أول زيارة</p>
+          <p>ابحث أو اختر تصنيفًا لعرض التطبيقات المناسبة بسرعة.</p>
         </div>
 
-        <div class="apps-grid" id="appsGrid"></div>
+        <div class="catalog-toolbar">
+          <label class="search-box" for="searchInput">
+            <span class="search-label">بحث</span>
+            <input
+              id="searchInput"
+              type="search"
+              inputmode="search"
+              placeholder="ابحث عن تطبيق أو وصف أو تصنيف"
+              autocomplete="off"
+            >
+          </label>
+
+          <div class="filters" id="categoryFilters" aria-label="تصنيفات التطبيقات"></div>
+        </div>
+
+        <div class="results-head">
+          <p class="results-note" id="resultsNote">عرض جميع التطبيقات المتاحة الآن.</p>
+        </div>
+
+        <div class="apps-grid" id="appsGrid" aria-live="polite"></div>
+        <p class="empty-state" id="emptyState" hidden>لا توجد تطبيقات مطابقة للبحث أو التصنيف الحالي.</p>
       </section>
     </main>
   </div>
