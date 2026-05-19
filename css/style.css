@@ -92,6 +92,41 @@ img {
   gap: 0.9rem;
 }
 
+.founder-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.founder-photo {
+  width: 5.9rem;
+  height: 5.9rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 209, 31, 0.92);
+  box-shadow: 0 12px 28px rgba(6, 15, 39, 0.28);
+}
+
+.founder-copy {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.founder-label {
+  color: var(--yellow-300);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.founder-copy p {
+  margin: 0;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+
 .eyebrow,
 .section-kicker,
 .card-category,
@@ -499,6 +534,11 @@ img {
 
   .hero-visual {
     min-height: 100%;
+  }
+
+  .founder-card {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
   }
 
   .catalog {

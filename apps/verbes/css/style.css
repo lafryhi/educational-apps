@@ -215,6 +215,7 @@ button {
   gap: 0.8rem;
   padding: clamp(1rem, 3vw, 1.6rem);
   text-align: center;
+  overflow: hidden;
 }
 
 .question-label {
@@ -226,10 +227,17 @@ button {
 .question-value {
   margin: 0;
   color: var(--text-dark);
-  font-size: clamp(2.3rem, 9vw, 5.6rem);
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(2.45rem, 6.4vw, 5.1rem);
   font-weight: 900;
   line-height: 1.08;
-  word-break: break-word;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow: hidden;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
 .choices-card {
@@ -368,5 +376,11 @@ button {
 
   .question-card {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .question-value {
+    font-size: clamp(2.15rem, 7vw, 3.9rem);
   }
 }
