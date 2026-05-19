@@ -1,4 +1,4 @@
-const CACHE_NAME = "educational-apps-v5";
+const CACHE_NAME = "educational-apps-v6";
 const APP_SHELL_FILES = [
   "/",
   "/index.html",
@@ -10,7 +10,7 @@ const APP_SHELL_FILES = [
   "/apps/verbes/css/style.css",
   "/apps/verbes/js/script.js",
   "/assets/images/founder.png",
-  "/assets/icons/hero-learning.svg",
+  "/assets/images/hero-student-learning.png",
   "/assets/icons/app-verbes.svg",
   "/assets/icons/app-numbers.svg",
   "/assets/icons/app-letters.svg",

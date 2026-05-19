@@ -69,6 +69,15 @@ img {
   padding: 0.9rem 0 2rem;
 }
 
+.site-title {
+  margin-bottom: 0.9rem;
+  text-align: center;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
 .hero,
 .catalog,
 .app-card {
@@ -236,7 +245,10 @@ img {
 }
 
 .hero-visual img {
-  width: min(100%, 23rem);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero-panel {
