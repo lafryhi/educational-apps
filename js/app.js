@@ -5,10 +5,77 @@ const apps = [
     description: "نشاط تفاعلي سريع لتدريب التلاميذ على مطابقة الفعل الفرنسي بمعناه العربي والعكس.",
     category: "Français",
     path: "./apps/verbes/",
-    status: "متاح الآن",
-    icon: "FR",
+    statusLabel: "متاح الآن",
+    statusType: "available",
+    icon: "./assets/icons/app-verbes.svg",
     audience: "الهاتف والحاسوب",
-    note: "واجهة مستقلة مناسبة للحصص السريعة."
+    note: "واجهة مستقلة مناسبة للحصص السريعة.",
+    keywords: ["verbes", "francais", "french", "langue", "book"]
+  },
+  {
+    id: "numbers",
+    title: "الأعداد",
+    description: "أنشطة بصرية مبسطة لتثبيت الأعداد والمقارنة والعد التدريجي داخل القسم.",
+    category: "Mathématiques",
+    path: "",
+    statusLabel: "قريبًا",
+    statusType: "coming-soon",
+    icon: "./assets/icons/app-numbers.svg",
+    audience: "الهاتف والحاسوب",
+    note: "سيضاف كتطبيق مستقل داخل قسم الرياضيات.",
+    keywords: ["numbers", "count", "math", "digits"]
+  },
+  {
+    id: "lettres-francaises",
+    title: "الحروف الفرنسية",
+    description: "بطاقات وتمارين سريعة للتعرف على الحروف والأصوات الفرنسية بشكل تفاعلي.",
+    category: "Français",
+    path: "",
+    statusLabel: "قريبًا",
+    statusType: "coming-soon",
+    icon: "./assets/icons/app-letters.svg",
+    audience: "الهاتف والحاسوب",
+    note: "مخصص لبدايات تعلم اللغة الفرنسية.",
+    keywords: ["letters", "alphabet", "francais", "phonics"]
+  },
+  {
+    id: "mathematiques",
+    title: "الرياضيات",
+    description: "تطبيقات قصيرة للعمليات والحساب الذهني والتمارين الصفية اليومية.",
+    category: "Mathématiques",
+    path: "",
+    statusLabel: "قريبًا",
+    statusType: "coming-soon",
+    icon: "./assets/icons/app-math.svg",
+    audience: "الهاتف والحاسوب",
+    note: "بنية مرنة لدروس الجمع والطرح والضرب.",
+    keywords: ["mathematiques", "operations", "math", "calcul"]
+  },
+  {
+    id: "imlae",
+    title: "الإملاء",
+    description: "أنشطة لغوية تركّز على الاستماع والتمييز والكتابة التدريجية بطريقة واضحة.",
+    category: "Arabe",
+    path: "",
+    statusLabel: "قريبًا",
+    statusType: "coming-soon",
+    icon: "./assets/icons/app-spelling.svg",
+    audience: "الهاتف والحاسوب",
+    note: "مناسب لحصص الدعم والتمرين الفردي.",
+    keywords: ["spelling", "dictation", "arabe", "ecriture"]
+  },
+  {
+    id: "lecture",
+    title: "القراءة",
+    description: "أنشطة للقراءة والفهم وتمييز الكلمات والجمل في واجهة تعليمية هادئة.",
+    category: "Jeux éducatifs",
+    path: "",
+    statusLabel: "قريبًا",
+    statusType: "coming-soon",
+    icon: "./assets/icons/app-reading.svg",
+    audience: "الهاتف والحاسوب",
+    note: "يمكن تطويره لاحقًا إلى قصص وأنشطة فهم.",
+    keywords: ["reading", "lecture", "story", "comprehension"]
   }
 ];
 
@@ -48,7 +115,19 @@ function registerServiceWorker() {
 }
 
 function normalizeText(value) {
-  return value.trim().toLowerCase();
+  return String(value).trim().toLowerCase();
+}
+
+function getSearchableText(app) {
+  return normalizeText([
+    app.title,
+    app.description,
+    app.category,
+    app.statusLabel,
+    app.audience,
+    app.note,
+    ...(app.keywords || [])
+  ].join(" "));
 }
 
 function getFilteredApps() {
@@ -56,8 +135,7 @@ function getFilteredApps() {
 
   return apps.filter((app) => {
     const matchesCategory = state.activeCategory === "الكل" || app.category === state.activeCategory;
-    const haystack = normalizeText([app.title, app.description, app.category, app.status].join(" "));
-    const matchesSearch = term === "" || haystack.includes(term);
+    const matchesSearch = term === "" || getSearchableText(app).includes(term);
 
     return matchesCategory && matchesSearch;
   });
@@ -78,17 +156,35 @@ function updateResultsNote(count) {
   resultsNote.textContent = `عرض ${count} تطبيق${count > 1 ? "ات" : ""} ضمن ${categoryLabel}${searchLabel}.`;
 }
 
+function createActionButton(app) {
+  if (app.statusType === "available") {
+    const launch = document.createElement("a");
+    launch.className = "primary-button";
+    launch.href = app.path;
+    launch.textContent = "تشغيل التطبيق";
+    return launch;
+  }
+
+  const comingSoon = document.createElement("button");
+  comingSoon.type = "button";
+  comingSoon.className = "secondary-button";
+  comingSoon.disabled = true;
+  comingSoon.textContent = "قريبًا";
+  return comingSoon;
+}
+
 function createAppCard(app) {
   const card = document.createElement("article");
-  card.className = "app-card";
+  card.className = `app-card ${app.statusType}`;
 
   const cover = document.createElement("div");
   cover.className = "card-cover";
 
-  const icon = document.createElement("div");
-  icon.className = "card-icon";
-  icon.setAttribute("aria-hidden", "true");
-  icon.textContent = app.icon;
+  const icon = document.createElement("img");
+  icon.src = app.icon;
+  icon.alt = `أيقونة ${app.title}`;
+  icon.loading = "lazy";
+  icon.decoding = "async";
   cover.append(icon);
 
   const body = document.createElement("div");
@@ -102,8 +198,8 @@ function createAppCard(app) {
   category.textContent = app.category;
 
   const status = document.createElement("span");
-  status.className = "card-status";
-  status.textContent = app.status;
+  status.className = `card-status ${app.statusType}`;
+  status.textContent = app.statusLabel;
 
   top.append(category, status);
 
@@ -124,23 +220,19 @@ function createAppCard(app) {
 
   const appType = document.createElement("span");
   appType.className = "meta-chip";
-  appType.textContent = "تطبيق تعليمي";
+  appType.textContent = app.statusType === "available" ? "جاهز للاستعمال" : "قيد التحضير";
 
   meta.append(audience, appType);
 
   const actions = document.createElement("div");
   actions.className = "card-actions";
-
-  const launch = document.createElement("a");
-  launch.className = "primary-button";
-  launch.href = app.path;
-  launch.textContent = "تشغيل التطبيق";
+  actions.append(createActionButton(app));
 
   const note = document.createElement("span");
   note.className = "card-note";
   note.textContent = app.note;
+  actions.append(note);
 
-  actions.append(launch, note);
   body.append(top, title, description, meta, actions);
   card.append(cover, body);
 
