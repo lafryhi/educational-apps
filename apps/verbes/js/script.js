@@ -279,7 +279,7 @@ function checkAnswer(button, answer) {
   scheduleNextQuestion();
 }
 
-function buildQuestionCard(label, value) {
+function buildQuestionCard(label, value, questionClass) {
   const card = document.createElement("article");
   card.className = "question-card";
 
@@ -288,7 +288,7 @@ function buildQuestionCard(label, value) {
   questionLabel.textContent = label;
 
   const questionValue = document.createElement("p");
-  questionValue.className = "question-value";
+  questionValue.className = `question-value ${questionClass}`;
   questionValue.textContent = value;
 
   card.append(questionLabel, questionValue);
@@ -341,6 +341,7 @@ function loadQuestion() {
   const mode = resolveMode(item);
   const askInFrench = mode === "fr-ar";
   const questionValue = askInFrench ? item.fr : item.ar;
+  const questionClass = askInFrench ? "question-fr" : "question-ar";
   const questionLabel = askInFrench ? "ما معنى هذا الفعل بالعربية؟" : "ما الفعل الفرنسي المناسب؟";
   const correctAnswer = askInFrench ? item.ar : item.fr;
   const choicePool = askInFrench
@@ -355,7 +356,7 @@ function loadQuestion() {
 
   const layout = document.createElement("section");
   layout.className = "question-layout";
-  layout.append(buildQuestionCard(questionLabel, questionValue), buildChoicesCard(choices));
+  layout.append(buildQuestionCard(questionLabel, questionValue, questionClass), buildChoicesCard(choices));
   screenElement.replaceChildren(layout);
 
   startTimer();
