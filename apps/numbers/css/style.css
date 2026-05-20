@@ -333,6 +333,17 @@ button {
     grid-area: workspace;
     direction: ltr;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "tens units";
+  }
+
+  .zone-tens {
+    grid-area: tens;
+    grid-column: 1;
+  }
+
+  .zone-units {
+    grid-area: units;
+    grid-column: 2;
   }
 
   .palette {
