@@ -14,16 +14,16 @@ const apps = [
   },
   {
     id: "numbers",
-    title: "الأعداد",
-    description: "أنشطة بصرية مبسطة لتثبيت الأعداد والمقارنة والعد التدريجي داخل القسم.",
+    title: "بناء الأعداد من 0 إلى 99",
+    description: "تطبيق تفاعلي لبناء الأعداد باستعمال الوحدات والعشرات بطريقة بصرية مناسبة للمستوى الأول.",
     category: "Mathématiques",
-    path: "",
-    statusLabel: "قريبًا",
-    statusType: "coming-soon",
+    path: "/apps/numbers/",
+    statusLabel: "متاح الآن",
+    statusType: "available",
     icon: "./assets/icons/app-numbers.svg",
     audience: "الهاتف والحاسوب",
-    note: "سيضاف كتطبيق مستقل داخل قسم الرياضيات.",
-    keywords: ["numbers", "count", "math", "digits"]
+    note: "واجهة مستقلة لبناء الأعداد بالعشرات والوحدات مع سحب ولمس مناسبين للقسم.",
+    keywords: ["numbers", "count", "math", "digits", "tens", "units", "0-99"]
   },
   {
     id: "lettres-francaises",

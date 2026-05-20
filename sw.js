@@ -1,10 +1,14 @@
-const CACHE_NAME = "educational-apps-v7";
+const CACHE_NAME = "educational-apps-v8";
 const APP_SHELL_FILES = [
   "/",
   "/index.html",
   "/css/style.css",
   "/js/app.js",
   "/manifest.json",
+  "/apps/numbers/",
+  "/apps/numbers/index.html",
+  "/apps/numbers/css/style.css",
+  "/apps/numbers/js/script.js",
   "/apps/verbes/",
   "/apps/verbes/index.html",
   "/apps/verbes/css/style.css",

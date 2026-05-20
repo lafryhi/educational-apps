@@ -1,0 +1,375 @@
+:root {
+  color-scheme: light;
+  --bg-start: #0e1f55;
+  --bg-end: #274297;
+  --surface: #ffffff;
+  --surface-soft: #f7fbff;
+  --surface-warm: #fffef4;
+  --sky: #45baf3;
+  --sky-shadow: #1786c7;
+  --yellow: #ffd21f;
+  --yellow-border: #f3b319;
+  --orange: #ff8a1f;
+  --orange-dark: #e26d00;
+  --green: #31bb73;
+  --green-dark: #0d7441;
+  --text-strong: #132342;
+  --text-soft: #4d648a;
+  --shadow-lg: 0 18px 36px rgba(6, 21, 66, 0.24);
+  --shadow-md: 0 12px 24px rgba(9, 31, 91, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, var(--bg-start), var(--bg-end));
+  color: #fff;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.toolbar,
+.target-box,
+.zone,
+.palette,
+.score-box,
+.message {
+  box-shadow: var(--shadow-lg);
+}
+
+.toolbar {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1.75rem;
+  background: rgba(14, 31, 85, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.toolbar-copy h1 {
+  margin: 0.3rem 0 0;
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.toolbar-kicker {
+  margin: 0;
+  color: var(--yellow);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.toolbar-actions {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.toolbar-actions button {
+  min-height: 3.6rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--orange), #ff9d44);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 6px 0 var(--orange-dark);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.toolbar-actions button:hover,
+.toolbar-actions button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 var(--orange-dark);
+  filter: brightness(1.03);
+}
+
+.toolbar-actions button:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 var(--orange-dark);
+}
+
+.app-main {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.target-box {
+  background: var(--surface);
+  border-radius: 1.8rem;
+  padding: 1rem;
+  text-align: center;
+  border: 4px solid var(--yellow);
+}
+
+.instructions {
+  margin: 0;
+  color: var(--orange);
+  font-size: clamp(1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+}
+
+.target-number {
+  margin-top: 0.4rem;
+  color: var(--text-strong);
+  font-size: clamp(3.6rem, 10vw, 5.8rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.workspace {
+  display: grid;
+  gap: 1rem;
+}
+
+.zone {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 18rem;
+  gap: 0.75rem;
+  background: var(--surface);
+  border-radius: 1.8rem;
+  padding: 0.85rem;
+}
+
+.zone-title,
+.count-box,
+.score-box {
+  background: linear-gradient(180deg, #ffe46c, var(--yellow));
+  color: var(--text-strong);
+  border: 3px solid var(--yellow-border);
+  font-weight: 800;
+}
+
+.zone-title,
+.count-box {
+  border-radius: 1rem;
+  text-align: center;
+  padding: 0.7rem 0.8rem;
+}
+
+.zone-title {
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+}
+
+.dropzone {
+  min-height: 12rem;
+  border: 4px dashed #bfd1ef;
+  border-radius: 1.35rem;
+  padding: 0.75rem;
+  background: var(--surface-warm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-content: flex-start;
+  overflow: auto;
+}
+
+.dropzone.drag-over {
+  border-color: var(--sky);
+  background: #eef9ff;
+}
+
+.palette {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.98);
+  border: 4px solid var(--yellow);
+  border-radius: 1.8rem;
+  padding: 0.9rem;
+  color: var(--text-strong);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.palette-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.palette-copy strong {
+  font-size: 1.1rem;
+}
+
+.palette-copy span {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.palette-blocks {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.palette-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.cube {
+  cursor: grab;
+}
+
+.cube:active {
+  cursor: grabbing;
+}
+
+.unit {
+  width: 46px;
+  height: 46px;
+  border: 3px solid var(--text-strong);
+  border-radius: 0.45rem;
+  background: #ffeb3b;
+  box-shadow: 4px 4px 0 #cfba16;
+}
+
+.ten {
+  width: 46px;
+  height: 188px;
+  border: 3px solid var(--text-strong);
+  border-radius: 0.45rem;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #ffeb3b 0,
+      #ffeb3b 16px,
+      #1a284a 16px,
+      #1a284a 19px
+    );
+  box-shadow: 4px 4px 0 #cfba16;
+}
+
+.small {
+  transform: scale(0.82);
+  transform-origin: center bottom;
+}
+
+.status-bar {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.score-box,
+.message {
+  border-radius: 1.2rem;
+  padding: 0.9rem 1rem;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+.score-box {
+  text-align: center;
+}
+
+.message {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--green-dark);
+  border: 3px solid rgba(255, 210, 31, 0.8);
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (min-width: 780px) {
+  .app-shell {
+    gap: 1.15rem;
+    padding: 1.2rem;
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .app-main {
+    grid-template-columns: minmax(0, 1fr) 9rem;
+    grid-template-areas:
+      "target palette"
+      "workspace palette";
+  }
+
+  .target-box {
+    grid-area: target;
+  }
+
+  .workspace {
+    grid-area: workspace;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .palette {
+    grid-area: palette;
+    position: static;
+    align-self: stretch;
+    align-content: start;
+  }
+
+  .palette-blocks {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .status-bar {
+    grid-template-columns: 15rem 1fr;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1100px) {
+  .app-shell {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .target-box {
+    padding: 1.1rem 1.4rem;
+  }
+
+  .zone {
+    min-height: 26rem;
+  }
+
+  .dropzone {
+    min-height: 19rem;
+  }
+
+  .toolbar-actions button {
+    min-width: 9rem;
+  }
+}

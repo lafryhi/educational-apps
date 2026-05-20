@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#17306d">
+  <meta name="description" content="تطبيق تفاعلي لبناء الأعداد من 0 إلى 99 باستعمال الوحدات والعشرات.">
+  <title>بناء الأعداد من 0 إلى 99</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="toolbar">
+      <div class="toolbar-copy">
+        <p class="toolbar-kicker">Mathématiques</p>
+        <h1>بناء الأعداد من 0 إلى 99</h1>
+      </div>
+
+      <div class="toolbar-actions">
+        <button id="newBtn" type="button">عدد جديد</button>
+        <button id="resetBtn" type="button">إعادة</button>
+        <button id="fullscreenBtn" type="button">ملء الشاشة</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="target-box" aria-labelledby="targetTitle">
+        <p class="instructions" id="targetTitle">ابن العدد باستعمال العشرات والوحدات</p>
+        <div class="target-number" id="targetNumber">25</div>
+      </section>
+
+      <section class="workspace" aria-label="منطقة العمل">
+        <div class="zone">
+          <div class="zone-title">العشرات</div>
+          <div class="dropzone" id="tensZone" data-type="10"></div>
+          <div class="count-box" id="tensCount">العشرات: 0</div>
+        </div>
+
+        <div class="zone">
+          <div class="zone-title">الوحدات</div>
+          <div class="dropzone" id="unitsZone" data-type="1"></div>
+          <div class="count-box" id="unitsCount">الوحدات: 0</div>
+        </div>
+      </section>
+
+      <aside class="palette" aria-label="صندوق الأدوات">
+        <div class="palette-copy">
+          <strong>المكعبات</strong>
+          <span>اسحب أو انقر لإضافة العناصر</span>
+        </div>
+
+        <div class="palette-blocks">
+          <button class="palette-block unit cube" type="button" draggable="true" data-value="1" aria-label="وحدة واحدة"></button>
+          <button class="palette-block ten cube small" type="button" draggable="true" data-value="10" aria-label="عشرة واحدة"></button>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="status-bar">
+      <div class="score-box">النقاط: <span id="score">0</span></div>
+      <div class="message" id="message">اسحب المكعبات إلى أماكنها الصحيحة</div>
+    </footer>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
