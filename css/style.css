@@ -151,14 +151,6 @@ img {
   box-shadow: 0 8px 20px rgba(255, 209, 31, 0.18);
 }
 
-.hero-copy h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 8vw, 4.9rem);
-  line-height: 0.96;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-}
-
 .hero-text,
 .section-head p,
 .hero-panel span,
