@@ -69,6 +69,27 @@ img {
   padding: 0.9rem 0 2rem;
 }
 
+.site-header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.85rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
 .hero,
 .catalog,
 .app-card {
@@ -90,6 +111,13 @@ img {
 .hero-panel {
   display: grid;
   gap: 0.9rem;
+}
+
+.hero-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.12;
 }
 
 .founder-card {

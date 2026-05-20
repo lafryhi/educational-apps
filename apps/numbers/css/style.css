@@ -73,6 +73,32 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.toolbar-copy {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.back-link {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.72rem 1.05rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--yellow) 0%, #ffc80a 100%);
+  border: 1px solid rgba(255, 210, 31, 0.45);
+  color: var(--text-strong);
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 10px 0 rgba(226, 109, 0, 0.55);
+}
+
+.back-link-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
 .toolbar-copy h1 {
   margin: 0.3rem 0 0;
   font-size: clamp(1.9rem, 4vw, 3.2rem);
@@ -106,10 +132,16 @@ button {
 }
 
 .toolbar-actions button:hover,
-.toolbar-actions button:focus-visible {
+.toolbar-actions button:focus-visible,
+.back-link:hover,
+.back-link:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 0 var(--orange-dark);
   filter: brightness(1.03);
+}
+
+.toolbar-actions button:hover,
+.toolbar-actions button:focus-visible {
+  box-shadow: 0 8px 0 var(--orange-dark);
 }
 
 .toolbar-actions button:active {

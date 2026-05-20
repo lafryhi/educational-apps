@@ -13,23 +13,27 @@
 </head>
 <body>
   <div class="site-shell">
+    <header class="site-header" aria-label="اسم المنصة">
+      <span class="site-brand">Educational Apps</span>
+    </header>
+
     <header class="hero" aria-label="واجهة المنصة الرئيسية">
       <div class="hero-copy">
         <span class="eyebrow">منصة تطبيقات تعليمية حديثة</span>
+        <h1 class="hero-title">منصة تطبيقات تعليمية تفاعلية</h1>
         <p class="hero-text">
-          متجر تربوي خفيف وسريع يعرض التطبيقات التعليمية بشكل واضح ومنظم، مع تجربة مناسبة للهاتف
-          والحاسوب والمسلاط داخل منصة واحدة قابلة للتوسع.
+          تطبيقات خفيفة وسهلة الاستعمال، تساعد على التعلم بطريقة ممتعة داخل القسم أو في المنزل.
         </p>
 
         <div class="hero-actions">
-          <a class="primary-button hero-button" href="./apps/verbes/">تشغيل أول تطبيق</a>
-          <span class="device-note">تعمل على الهاتف والحاسوب مع واجهات لمس مريحة وواضحة</span>
+          <a class="primary-button hero-button" href="#catalog-title">استكشف التطبيقات</a>
+          <span class="device-note">أدوات رقمية مبسطة تسهّل الوصول إلى أنشطة تعليمية واضحة وسريعة.</span>
         </div>
 
         <div class="hero-meta">
-          <span class="hero-pill">Mobile First</span>
-          <span class="hero-pill">Blue Learning UI</span>
-          <span class="hero-pill">Offline After First Visit</span>
+          <span class="hero-pill">للهاتف والحاسوب</span>
+          <span class="hero-pill">مناسبة للمسلاط</span>
+          <span class="hero-pill">تعلم تفاعلي</span>
         </div>
 
         <article class="founder-card" aria-label="تعريف بصاحب المنصة">
@@ -41,10 +45,10 @@
             decoding="async"
           >
           <div class="founder-copy">
-            <span class="founder-label">من إعداد الأستاذ</span>
+            <span class="founder-label">من إعداد الأستاذ لفريحي المصطفى</span>
             <p>
-              منصة تعليمية رقمية من إعداد الأستاذ لفريحي المصطفى، موجهة لدعم التعلم التفاعلي داخل
-              القسم وخارجه.
+              أدوات رقمية مبسطة لدعم التعلم التفاعلي، ومساعدة الأساتذة والتلاميذ على استعمال
+              التكنولوجيا في التعليم بشكل عملي.
             </p>
           </div>
         </article>
@@ -55,16 +59,16 @@
       </div>
 
       <div class="hero-panel">
-        <p class="hero-label">النطاق المستهدف</p>
-        <strong>apps.lafryhi-elmostafa-school-primary.com</strong>
-        <span>منصة جاهزة للنشر السريع والتوسع التدريجي عبر تطبيقات مستقلة.</span>
+        <p class="hero-label">تعلم واضح ومنظم</p>
+        <strong>تجربة تعليمية مناسبة للأساتذة والتلاميذ وأولياء الأمور</strong>
+        <span>وصول سريع إلى التطبيقات، مع واجهات مريحة تساعد على التعلم بخطوات بسيطة ومباشرة.</span>
 
         <div class="hero-highlight">
           <div>
-            <span class="hero-highlight-label">الوضع الحالي</span>
-            <strong>تطبيقات متاحة وأخرى قادمة</strong>
+            <span class="hero-highlight-label">داخل القسم أو في المنزل</span>
+            <strong>أنشطة تعليمية قصيرة تدعم الفهم والممارسة</strong>
           </div>
-          <p>الأيقونات محلية، والصفحة الرئيسية تعمل بدون إنترنت بعد أول زيارة.</p>
+          <p>اختر التطبيق المناسب وابدأ التعلم مباشرة في واجهة واضحة ومهيأة للشاشات المختلفة.</p>
         </div>
       </div>
     </header>
@@ -74,9 +78,9 @@
         <div class="section-head">
           <div>
             <span class="section-kicker">التطبيقات التعليمية</span>
-            <h2 id="catalog-title">اكتشف التطبيقات والأنشطة</h2>
+            <h2 id="catalog-title">اكتشف التطبيقات التعليمية</h2>
           </div>
-          <p>ابحث أو اختر تصنيفًا لعرض التطبيقات المتاحة الآن أو التطبيقات التي ستضاف قريبًا.</p>
+          <p>اختر تطبيقًا وابدأ التعلم مباشرة.</p>
         </div>
 
         <div class="catalog-toolbar">
@@ -86,7 +90,7 @@
               id="searchInput"
               type="search"
               inputmode="search"
-              placeholder="ابحث عن عنوان أو وصف أو تصنيف"
+              placeholder="ابحث عن تطبيق..."
               autocomplete="off"
             >
           </label>
@@ -95,7 +99,7 @@
         </div>
 
         <div class="results-head">
-          <p class="results-note" id="resultsNote">عرض التطبيقات التعليمية المتاحة حاليًا.</p>
+          <p class="results-note" id="resultsNote">تطبيقات تعليمية جاهزة للاستعمال أو ستصل قريبًا.</p>
         </div>
 
         <div class="apps-grid" id="appsGrid" aria-live="polite"></div>

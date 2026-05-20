@@ -77,14 +77,21 @@ button {
   display: inline-flex;
   justify-self: start;
   align-items: center;
+  gap: 0.55rem;
   min-height: 3rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.1rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--white-border);
-  color: var(--text-light);
-  font-weight: 700;
+  background: linear-gradient(180deg, var(--yellow-bg) 0%, #ffc80a 100%);
+  border: 1px solid rgba(255, 210, 31, 0.45);
+  color: #0d1d45;
+  font-weight: 900;
   text-decoration: none;
+  box-shadow: 0 10px 0 rgba(216, 106, 11, 0.55);
+}
+
+.back-link-icon {
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .title-wrap {

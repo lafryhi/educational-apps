@@ -9,7 +9,7 @@ const apps = [
     statusType: "available",
     icon: "./assets/icons/app-verbes.svg",
     audience: "الهاتف والحاسوب",
-    note: "واجهة مستقلة مناسبة للحصص السريعة.",
+    note: "مناسب للتدريب السريع داخل الحصة أو للدعم المنزلي.",
     keywords: ["verbes", "francais", "french", "langue", "book"]
   },
   {
@@ -22,7 +22,7 @@ const apps = [
     statusType: "available",
     icon: "./assets/icons/app-numbers.svg",
     audience: "الهاتف والحاسوب",
-    note: "واجهة مستقلة لبناء الأعداد بالعشرات والوحدات مع سحب ولمس مناسبين للقسم.",
+    note: "يعرض مفهوم العشرات والوحدات بأسلوب بصري بسيط وواضح.",
     keywords: ["numbers", "count", "math", "digits", "tens", "units", "0-99"]
   },
   {
@@ -48,7 +48,7 @@ const apps = [
     statusType: "coming-soon",
     icon: "./assets/icons/app-math.svg",
     audience: "الهاتف والحاسوب",
-    note: "بنية مرنة لدروس الجمع والطرح والضرب.",
+    note: "أنشطة سريعة لدعم الحساب الذهني والتدريب اليومي.",
     keywords: ["mathematiques", "operations", "math", "calcul"]
   },
   {
@@ -61,7 +61,7 @@ const apps = [
     statusType: "coming-soon",
     icon: "./assets/icons/app-spelling.svg",
     audience: "الهاتف والحاسوب",
-    note: "مناسب لحصص الدعم والتمرين الفردي.",
+    note: "أنشطة مبسطة لترسيخ السمع والكتابة والتمييز اللغوي.",
     keywords: ["spelling", "dictation", "arabe", "ecriture"]
   },
   {
@@ -74,7 +74,7 @@ const apps = [
     statusType: "coming-soon",
     icon: "./assets/icons/app-reading.svg",
     audience: "الهاتف والحاسوب",
-    note: "يمكن تطويره لاحقًا إلى قصص وأنشطة فهم.",
+    note: "مناسب لتدريب القراءة والفهم بشكل تدريجي وواضح.",
     keywords: ["reading", "lecture", "story", "comprehension"]
   }
 ];
@@ -220,7 +220,7 @@ function createAppCard(app) {
 
   const appType = document.createElement("span");
   appType.className = "meta-chip";
-  appType.textContent = app.statusType === "available" ? "جاهز للاستعمال" : "قيد التحضير";
+  appType.textContent = app.statusType === "available" ? "جاهز الآن" : "قريبًا";
 
   meta.append(audience, appType);
 
