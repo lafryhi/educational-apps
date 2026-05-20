@@ -1,4 +1,4 @@
-const CACHE_NAME = "educational-apps-v9";
+const CACHE_NAME = "educational-apps-v10";
 const APP_SHELL_FILES = [
   "/",
   "/index.html",
