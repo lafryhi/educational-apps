@@ -152,6 +152,7 @@ button {
 }
 
 .zone {
+  direction: rtl;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 18rem;
@@ -330,6 +331,7 @@ button {
 
   .workspace {
     grid-area: workspace;
+    direction: ltr;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
