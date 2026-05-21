@@ -1,10 +1,14 @@
-const CACHE_NAME = "educational-apps-v10";
+const CACHE_NAME = "educational-apps-v11";
 const APP_SHELL_FILES = [
   "/",
   "/index.html",
   "/css/style.css",
   "/js/app.js",
   "/manifest.json",
+  "/apps/math-board/",
+  "/apps/math-board/index.html",
+  "/apps/math-board/css/style.css",
+  "/apps/math-board/js/script.js",
   "/apps/numbers/",
   "/apps/numbers/index.html",
   "/apps/numbers/css/style.css",
@@ -17,6 +21,7 @@ const APP_SHELL_FILES = [
   "/assets/images/hero-student-learning.png",
   "/assets/icons/app-verbes.svg",
   "/assets/icons/app-numbers.svg",
+  "/assets/icons/app-math-board.svg",
   "/assets/icons/app-letters.svg",
   "/assets/icons/app-math.svg",
   "/assets/icons/app-spelling.svg",

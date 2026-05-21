@@ -26,6 +26,19 @@ const apps = [
     keywords: ["numbers", "count", "math", "digits", "tens", "units", "0-99"]
   },
   {
+    id: "math-board",
+    title: "Interactive Math Board",
+    description: "سبورة رياضيات تفاعلية مناسبة للمسلاط والعمل داخل القسم.",
+    category: "Mathématiques",
+    path: "/apps/math-board/",
+    statusLabel: "متاح الآن",
+    statusType: "available",
+    icon: "./assets/icons/app-math-board.svg",
+    audience: "الهاتف والحاسوب",
+    note: "مناسبة للشرح والرسم السريع مع أدوات هندسية وألوان متعددة.",
+    keywords: ["interactive math board", "board", "math", "geometry", "drawing", "whiteboard"]
+  },
+  {
     id: "lettres-francaises",
     title: "الحروف الفرنسية",
     description: "بطاقات وتمارين سريعة للتعرف على الحروف والأصوات الفرنسية بشكل تفاعلي.",

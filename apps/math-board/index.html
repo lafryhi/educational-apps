@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17306d">
+  <meta name="description" content="سبورة رياضيات تفاعلية مناسبة للمسلاط والعمل داخل القسم.">
+  <title>Interactive Math Board</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="board-shell">
+    <header class="board-header">
+      <a class="back-link" href="https://apps.lafryhi-elmostafa-school-primary.com/" aria-label="العودة إلى المنصة الرئيسية">
+        <span class="back-link-icon" aria-hidden="true">⌂</span>
+        <span>العودة إلى المنصة</span>
+      </a>
+
+      <div class="board-title">
+        <span class="board-kicker">Mathématiques</span>
+        <h1>Interactive Math Board</h1>
+        <p>سبورة رياضيات تفاعلية مناسبة للمسلاط والعمل داخل القسم.</p>
+      </div>
+
+      <p class="orientation-note">📱 للحصول على أفضل تجربة، استعمل الهاتف بالوضع الأفقي.</p>
+    </header>
+
+    <section class="board-toolbar" aria-label="أدوات السبورة">
+      <div class="tool-group" aria-label="أدوات الرسم">
+        <button class="tool-btn active" id="penBtn" data-tool="pen" type="button">✏️ قلم</button>
+        <button class="tool-btn" id="lineBtn" data-tool="line" type="button">📏 مستقيم</button>
+        <button class="tool-btn" id="rectBtn" data-tool="rect" type="button">⬛ مربع</button>
+        <button class="tool-btn" id="circleBtn" data-tool="circle" type="button">⚪ دائرة</button>
+        <button class="tool-btn" id="eraserBtn" data-tool="eraser" type="button">🧽 ممحاة</button>
+      </div>
+
+      <div class="tool-group actions-group" aria-label="إجراءات السبورة">
+        <button class="tool-btn utility-btn" id="clearBtn" type="button">🗑️ مسح</button>
+        <button class="tool-btn utility-btn" id="fullscreenBtn" type="button">🖥️ ملء الشاشة</button>
+      </div>
+
+      <div class="picker-group" aria-label="اختيار اللون">
+        <button class="color-btn active-color" type="button" style="background:#000000" data-color="#000000" aria-label="أسود"></button>
+        <button class="color-btn" type="button" style="background:#f44336" data-color="#f44336" aria-label="أحمر"></button>
+        <button class="color-btn" type="button" style="background:#1d4ed8" data-color="#1d4ed8" aria-label="أزرق"></button>
+        <button class="color-btn" type="button" style="background:#16a34a" data-color="#16a34a" aria-label="أخضر"></button>
+        <button class="color-btn" type="button" style="background:#f59e0b" data-color="#f59e0b" aria-label="برتقالي"></button>
+        <button class="color-btn" type="button" style="background:#7c3aed" data-color="#7c3aed" aria-label="بنفسجي"></button>
+      </div>
+
+      <label class="size-box" for="sizeRange">
+        <span>السُّمك</span>
+        <input type="range" id="sizeRange" min="2" max="30" value="4">
+        <strong id="sizeValue">4</strong>
+      </label>
+    </section>
+
+    <main class="board-stage" id="boardStage">
+      <div class="counter-box" aria-hidden="true">
+        <div class="counter">1</div>
+        <div class="counter">2</div>
+        <div class="counter">3</div>
+        <div class="counter">4</div>
+        <div class="counter">5</div>
+        <div class="counter">6</div>
+        <div class="counter">7</div>
+        <div class="counter">8</div>
+        <div class="counter">9</div>
+        <div class="counter">10</div>
+      </div>
+
+      <div class="ruler" aria-hidden="true"></div>
+      <div class="protractor" aria-hidden="true"></div>
+      <canvas id="canvas"></canvas>
+    </main>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
