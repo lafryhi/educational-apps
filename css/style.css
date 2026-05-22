@@ -79,6 +79,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.65rem;
   min-height: 2.8rem;
   padding: 0.5rem 1.2rem;
   border-radius: 999px;
@@ -88,6 +89,14 @@ img {
   font-size: 1rem;
   font-weight: 900;
   letter-spacing: 0.02em;
+}
+
+.site-brand-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 0.8rem;
+  box-shadow: 0 10px 24px rgba(7, 18, 46, 0.25);
 }
 
 .hero,

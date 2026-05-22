@@ -1,4 +1,4 @@
-const CACHE_NAME = "educational-apps-v12";
+const CACHE_NAME = "educational-apps-v14";
 const APP_SHELL_FILES = [
   "/",
   "/index.html",
@@ -26,8 +26,12 @@ const APP_SHELL_FILES = [
   "/assets/icons/app-math.svg",
   "/assets/icons/app-spelling.svg",
   "/assets/icons/app-reading.svg",
-  "/assets/icons/icon-192.svg",
-  "/assets/icons/icon-512.svg"
+  "/assets/icons/app-main.png",
+  "/assets/icons/app-main-512.png",
+  "/assets/icons/app-main-192.png",
+  "/assets/icons/app-main-180.png",
+  "/assets/icons/app-main-32.png",
+  "/assets/icons/app-main-16.png"
 ];
 
 self.addEventListener("install", (event) => {
